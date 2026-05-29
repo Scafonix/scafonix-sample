@@ -6,9 +6,12 @@
 ---
 
 ## 🎨 Preview & Aesthetics
-This project features a high-end, responsive dark-mode checkout experience with:
+
+![LoreWeaver AI Demo](demo.png)
+
+This project features a high-end, responsive light parchment checkout experience with:
 - **3D Book Cover Mockup**: Interactive CSS 3D rotating cover mockup of the AI novel.
-- **Cybernetic Theme**: Styled with neon violet and cyber cyan color palettes suited for modern AI products.
+- **Antique Theme**: Styled with warm ivory and gold/bronze color palettes suited for classic fantasy products.
 - **Scafonix Integration**: Standard HTML button parameters that connect seamlessly with the Scafonix Pay checkout portal.
 
 ---
