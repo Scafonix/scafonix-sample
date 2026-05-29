@@ -20,6 +20,8 @@
                 --text-secondary: #706255; /* Soft Muted Brown */
                 --accent-gold: #ab8e67; /* Classic Antique Gold */
                 --accent-gold-hover: #967a54;
+                --btn-bg: linear-gradient(135deg, #1c1b18 0%, #3a3832 100%); /* Deep charcoal button */
+                --btn-bg-hover: linear-gradient(135deg, #33312d 0%, #4d4a43 100%);
                 --glow-color: rgba(171, 142, 103, 0.12);
                 --font-sans: "Space Grotesk", "Inter", sans-serif;
             }
@@ -107,6 +109,33 @@
                 margin-bottom: 30px;
             }
 
+            /* Buttons */
+            .action-btn {
+                width: 100%;
+                padding: 16px;
+                background: var(--btn-bg);
+                color: #ffffff;
+                border: none;
+                font-size: 0.95rem;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                box-shadow: 0 4px 15px rgba(28, 27, 24, 0.15);
+                text-decoration: none;
+                margin-bottom: 20px;
+            }
+
+            .action-btn:hover {
+                background: var(--btn-bg-hover);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(28, 27, 24, 0.25);
+            }
+
             .back-link {
                 display: inline-block;
                 color: var(--text-secondary);
@@ -156,6 +185,16 @@
             <p class="success-desc">
                 Thank you for your purchase. Your payment was verified successfully and your AI Novel files are now unlocked.
             </p>
+
+            <!-- Action Buttons -->
+            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                <a href="The_Magicless_Archmage_Vol1.pdf" download class="action-btn" style="margin-bottom: 0; flex: 1;">
+                    📚 Download (EN)
+                </a>
+                <a href="The_Magicless_Archmage_Vol1_KO.pdf" download class="action-btn" style="margin-bottom: 0; flex: 1; background: linear-gradient(135deg, #ab8e67 0%, #b5833d 100%);">
+                    📚 다운로드 (KO)
+                </a>
+            </div>
 
             <a href="index.html" class="back-link">
                 ← Return to Store
