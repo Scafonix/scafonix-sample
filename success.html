@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payment Successful - LoreWeaver AI</title>
+        <!-- Premium Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg-color: #030303; /* Pure Obsidian Black */
+                --card-bg: #09090b; /* Zinc 950 */
+                --card-border: rgba(6, 182, 212, 0.15); /* Cyber Cyan */
+                --text-primary: #f4f4f5; /* Zinc 100 */
+                --text-secondary: #a1a1aa; /* Zinc 400 */
+                --accent-cyan: #06b6d4; /* Cyber Cyan */
+                --accent-violet: #8b5cf6; /* Electric Violet */
+                --btn-bg: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+                --btn-bg-hover: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+                --glow-color: rgba(6, 182, 212, 0.25);
+                --font-mono: "Fira Code", monospace;
+                --font-sans: "Space Grotesk", "Inter", sans-serif;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: var(--font-sans);
+                background-color: var(--bg-color);
+                background-image:
+                    radial-gradient(
+                        circle at 10% 20%,
+                        rgba(6, 182, 212, 0.08) 0%,
+                        transparent 40%
+                    ),
+                    radial-gradient(
+                        circle at 90% 80%,
+                        rgba(139, 92, 246, 0.05) 0%,
+                        transparent 50%
+                    );
+                color: var(--text-primary);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                overflow-x: hidden;
+            }
+
+            /* Success Container */
+            .success-container {
+                width: 100%;
+                max-width: 500px;
+                background: var(--card-bg);
+                border: 1px solid var(--card-border);
+                border-radius: 24px;
+                padding: 40px 30px;
+                text-align: center;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 35px var(--glow-color);
+                animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            /* Glowing Checkmark Badge */
+            .success-badge {
+                width: 80px;
+                height: 80px;
+                background: rgba(6, 182, 212, 0.1);
+                border: 2px solid var(--accent-cyan);
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 25px;
+                box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+                animation: pulseGlow 2s infinite;
+            }
+
+            .success-badge svg {
+                width: 36px;
+                height: 36px;
+                stroke: var(--accent-cyan);
+                stroke-width: 3;
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
+            .success-title {
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: var(--text-primary);
+                margin-bottom: 10px;
+                letter-spacing: -0.5px;
+            }
+
+            .success-desc {
+                font-size: 0.95rem;
+                color: var(--text-secondary);
+                line-height: 1.5;
+                margin-bottom: 30px;
+            }
+
+            /* Transaction Receipt Card */
+            .receipt-card {
+                background: rgba(0, 0, 0, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.03);
+                border-radius: 16px;
+                padding: 20px;
+                margin-bottom: 30px;
+                text-align: left;
+            }
+
+            .receipt-row {
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.85rem;
+                margin-bottom: 12px;
+            }
+
+            .receipt-row:last-child {
+                margin-bottom: 0;
+                padding-top: 12px;
+                border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            }
+
+            .receipt-label {
+                color: var(--text-secondary);
+            }
+
+            .receipt-value {
+                color: var(--text-primary);
+                font-weight: 600;
+            }
+
+            .receipt-value.highlight {
+                color: var(--accent-cyan);
+            }
+
+            /* Buttons */
+            .action-btn {
+                width: 100%;
+                padding: 16px;
+                background: var(--btn-bg);
+                color: #ffffff;
+                border: none;
+                font-size: 0.95rem;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+                text-decoration: none;
+                margin-bottom: 15px;
+            }
+
+            .action-btn:hover {
+                background: var(--btn-bg-hover);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(6, 182, 212, 0.35);
+            }
+
+            .back-link {
+                display: inline-block;
+                color: var(--text-secondary);
+                font-size: 0.85rem;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+
+            .back-link:hover {
+                color: var(--text-primary);
+            }
+
+            /* Keyframe Animations */
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes pulseGlow {
+                0%, 100% {
+                    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+                    border-color: var(--accent-cyan);
+                }
+                50% {
+                    box-shadow: 0 0 35px rgba(6, 182, 212, 0.5);
+                    border-color: #22d3ee;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="success-container">
+            <!-- Glowing Success Badge -->
+            <div class="success-badge">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <h1 class="success-title">Payment Successful</h1>
+            <p class="success-desc">
+                Thank you for your purchase. Your payment was verified successfully and your AI Novel files are now unlocked.
+            </p>
+
+
+
+            <a href="index.html" class="back-link">
+                ← Return to Store
+            </a>
+        </div>
+    </body>
+</html>

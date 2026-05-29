@@ -1,0 +1,13 @@
+{
+  "name": "scafonix-payment-sample",
+  "version": "1.0.0",
+  "description": "Scafonix Web3 PG Integration Sample",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "fastify": "^4.26.0",
+    "@fastify/static": "^6.12.0"
+  }
+}
