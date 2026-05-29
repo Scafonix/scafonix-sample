@@ -558,9 +558,26 @@
 
                 <div>
                     <div class="payment-box">
+                        <div class="input-group" style="text-align: left; margin-bottom: 16px;">
+                            <label for="cid-input" style="display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 6px;">Customer ID (CID)</label>
+                            <input 
+                                type="text" 
+                                id="cid-input" 
+                                placeholder="e.g., user@example.com" 
+                                style="width: 100%; padding: 12px 14px; border: 1px solid rgba(171, 142, 103, 0.3); border-radius: 10px; font-family: var(--font-sans); font-size: 0.9rem; background-color: #faf9f6; color: var(--text-primary); transition: all 0.3s ease; outline: none;"
+                            />
+                            <style>
+                                #cid-input:focus {
+                                    border-color: var(--accent-primary) !important;
+                                    background-color: #ffffff !important;
+                                    box-shadow: 0 0 0 3px rgba(171, 142, 103, 0.15);
+                                }
+                            </style>
+                            <div id="cid-error" style="color: #ef4444; font-size: 0.75rem; margin-top: 4px; display: none;">Please enter a Customer ID to proceed.</div>
+                        </div>
                         <a
                             id="pay-button"
-                            href="https://pay.scafonix.com/checkout/index.html?pk=pk_526c4c8dcd8cce55477bd770fc66d501&pid=prod_b98b9adb-45d8-4586-8c2c-a8d72c3ca301&cid=alice@aaa.com"
+                            href="#"
                             class="scafonix-btn"
                             style="text-decoration: none"
                         >
@@ -591,5 +608,44 @@
               <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 0.95rem; color: #1c1b18;">Pay <span style="background: linear-gradient(90deg, #2563eb, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 750;">Integrated</span></span>
             </a>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const payButton = document.getElementById('pay-button');
+                const cidInput = document.getElementById('cid-input');
+                const cidError = document.getElementById('cid-error');
+
+                // Base Scafonix payment link
+                const basePaymentUrl = "https://pay.scafonix.com/checkout/index.html?pk=pk_526c4c8dcd8cce55477bd770fc66d501&pid=prod_b98b9adb-45d8-4586-8c2c-a8d72c3ca301";
+
+                // Generate and pre-fill random CID to prevent shared account rate limiting
+                const randomId = Math.random().toString(36).substring(2, 8);
+                cidInput.value = `demo_user_${randomId}@example.com`;
+
+                payButton.addEventListener('click', (e) => {
+                    const cidValue = cidInput.value.trim();
+                    if (!cidValue) {
+                        e.preventDefault();
+                        cidError.style.display = 'block';
+                        cidInput.style.borderColor = '#ef4444';
+                        cidInput.focus();
+                    } else {
+                        cidError.style.display = 'none';
+                        cidInput.style.borderColor = 'rgba(171, 142, 103, 0.3)';
+                        
+                        // Construct url with the user entered CID
+                        const targetUrl = `${basePaymentUrl}&cid=${encodeURIComponent(cidValue)}`;
+                        payButton.setAttribute('href', targetUrl);
+                    }
+                });
+
+                // Clear error state on input
+                cidInput.addEventListener('input', () => {
+                    if (cidInput.value.trim()) {
+                        cidError.style.display = 'none';
+                        cidInput.style.borderColor = 'rgba(171, 142, 103, 0.3)';
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
