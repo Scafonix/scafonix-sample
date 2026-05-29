@@ -8,25 +8,26 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="https://pay.scafonix.com/assets/scafonix-badges.css">
         <style>
             :root {
-                --bg-color: #030303; /* Pure Obsidian Black */
-                --card-bg: #09090b; /* Zinc 950 */
-                --card-border: rgba(139, 92, 246, 0.15); /* Violet */
-                --text-primary: #f4f4f5; /* Zinc 100 */
-                --text-secondary: #a1a1aa; /* Zinc 400 */
-                --accent-primary: #8b5cf6; /* Electric Violet */
-                --accent-primary-hover: #a78bfa;
-                --accent-secondary: #06b6d4; /* Cyber Cyan */
-                --btn-bg: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
-                --btn-bg-hover: linear-gradient(135deg, #a78bfa 0%, #e879f9 100%);
-                --glow-color: rgba(139, 92, 246, 0.2);
+                --bg-color: #faf8f5; /* Warm Luxury Ivory / Parchment */
+                --card-bg: #ffffff; /* Pure White Card */
+                --card-border: rgba(171, 142, 103, 0.25); /* Gold filigree border */
+                --text-primary: #1c1b18; /* Warm Near-Black */
+                --text-secondary: #706255; /* Soft Muted Brown */
+                --accent-primary: #ab8e67; /* Classic Antique Gold */
+                --accent-primary-hover: #967a54;
+                --accent-secondary: #8b5cf6; /* Arcane Purple glow */
+                --btn-bg: linear-gradient(135deg, #1c1b18 0%, #3a3832 100%); /* Deep charcoal button for high contrast */
+                --btn-bg-hover: linear-gradient(135deg, #33312d 0%, #4d4a43 100%);
+                --glow-color: rgba(171, 142, 103, 0.1);
+                --font-serif: "Cinzel", serif;
+                --font-sans: "Space Grotesk", "Inter", sans-serif;
                 --font-mono: "Fira Code", monospace;
-                --font-sans: "Space Grotesk", "Inter", "Noto Sans KR", sans-serif;
             }
 
             * {
@@ -41,12 +42,12 @@
                 background-image:
                     radial-gradient(
                         circle at 10% 20%,
-                        rgba(139, 92, 246, 0.08) 0%,
+                        rgba(171, 142, 103, 0.05) 0%,
                         transparent 40%
                     ),
                     radial-gradient(
                         circle at 90% 80%,
-                        rgba(6, 182, 212, 0.05) 0%,
+                        rgba(139, 92, 246, 0.02) 0%,
                         transparent 50%
                     );
                 color: var(--text-primary);
@@ -69,8 +70,8 @@
 
             .demo-step-badge {
                 display: inline-block;
-                background: rgba(139, 92, 246, 0.1);
-                border: 1px solid rgba(139, 92, 246, 0.2);
+                background: rgba(171, 142, 103, 0.08);
+                border: 1px solid rgba(171, 142, 103, 0.18);
                 color: var(--accent-primary-hover);
                 font-size: 0.7rem;
                 font-weight: 600;
@@ -106,7 +107,7 @@
                 display: grid;
                 grid-template-columns: 1.1fr 0.9fr;
                 overflow: hidden;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px var(--glow-color);
+                box-shadow: 0 20px 45px rgba(171, 142, 103, 0.12);
                 animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             }
 
@@ -123,7 +124,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                background-color: rgba(9, 9, 11, 0.5);
+                background-color: #faf9f6;
             }
 
             @media (max-width: 768px) {
@@ -135,7 +136,7 @@
             }
 
             .brand-logo {
-                font-family: var(--font-sans);
+                font-family: var(--font-serif);
                 font-size: 1.1rem;
                 font-weight: 700;
                 letter-spacing: 2px;
@@ -163,16 +164,16 @@
                 margin-bottom: 25px;
                 overflow: hidden;
                 border-radius: 16px;
-                background: rgba(0, 0, 0, 0.2);
-                border: 1px solid rgba(255, 255, 255, 0.03);
+                background: rgba(171, 142, 103, 0.03);
+                border: 1px solid rgba(171, 142, 103, 0.08);
             }
 
             .hologram-grid {
                 position: absolute;
                 width: 120%;
                 height: 120%;
-                background-image: linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-                                  linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+                background-image: linear-gradient(rgba(171, 142, 103, 0.04) 1px, transparent 1px),
+                                  linear-gradient(90deg, rgba(171, 142, 103, 0.04) 1px, transparent 1px);
                 background-size: 20px 20px;
                 background-position: center;
                 transform: perspective(500px) rotateX(60deg) translateY(-20px);
@@ -207,13 +208,13 @@
                 position: absolute;
                 width: 18px;
                 height: 100%;
-                background: #0f0b29;
-                border: 1px solid rgba(139, 92, 246, 0.3);
+                background: #e2dacd;
+                border: 1px solid rgba(171, 142, 103, 0.4);
                 border-right: none;
                 transform: rotateY(-90deg) translateZ(9px);
                 left: -9px;
                 border-radius: 2px 0 0 2px;
-                box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.7);
+                box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.15);
             }
 
             /* Front cover */
@@ -221,19 +222,20 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(145deg, #150f3b 0%, #060410 100%);
-                border: 1px solid rgba(139, 92, 246, 0.35);
+                background: linear-gradient(145deg, #fbfaf7 0%, #e5dfd5 100%);
+                border: 1px solid rgba(171, 142, 103, 0.4);
                 border-radius: 2px 10px 10px 2px;
-                padding: 16px 12px;
+                padding: 18px 12px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 backface-visibility: hidden;
                 overflow: hidden;
-                box-shadow: 10px 15px 35px rgba(0, 0, 0, 0.6),
-                            inset -3px 0 5px rgba(255, 255, 255, 0.05);
+                box-shadow: 8px 12px 25px rgba(171, 142, 103, 0.15),
+                            inset -3px 0 5px rgba(255, 255, 255, 0.6);
             }
 
+            /* Golden Spine Reflection Line */
             .book-cover::after {
                 content: '';
                 position: absolute;
@@ -242,60 +244,59 @@
                 width: 6px;
                 height: 100%;
                 background: linear-gradient(90deg, 
-                    rgba(255, 255, 255, 0.15) 0%, 
-                    rgba(139, 92, 246, 0.3) 40%, 
+                    rgba(255, 255, 255, 0.4) 0%, 
+                    rgba(171, 142, 103, 0.2) 40%, 
                     transparent 100%);
             }
 
-            /* Cyber Art element on Book Cover */
+            /* Magic Circle on Cover */
             .cover-art-container {
-                position: absolute;
-                top: 48%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 96px;
-                height: 96px;
+                position: relative;
+                width: 76px;
+                height: 76px;
+                margin: 12px auto;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
 
-            .cover-nebula {
+            .cover-magic-circle {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                background: radial-gradient(circle, rgba(217, 70, 239, 0.25) 0%, rgba(139, 92, 246, 0.05) 60%, transparent 100%);
+                background: radial-gradient(circle, rgba(171, 142, 103, 0.15) 0%, rgba(171, 142, 103, 0.02) 60%, transparent 100%);
                 border-radius: 50%;
-                border: 1px dashed rgba(6, 182, 212, 0.25);
-                animation: spin 16s linear infinite;
+                border: 1.5px dashed rgba(171, 142, 103, 0.4);
+                animation: spin 20s linear infinite;
             }
 
-            .cover-constellation {
+            .cover-rune-inner {
                 position: absolute;
-                width: 64px;
-                height: 64px;
+                width: 48px;
+                height: 48px;
                 border-radius: 50%;
-                border: 1.5px solid var(--accent-secondary);
-                box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
-                background: rgba(9, 9, 11, 0.7);
+                border: 1.5px solid var(--accent-primary);
+                box-shadow: 0 2px 10px rgba(171, 142, 103, 0.15);
+                background: #ffffff;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
 
-            .cover-core {
-                width: 16px;
-                height: 16px;
+            .cover-rune-core {
+                width: 14px;
+                height: 14px;
                 border-radius: 50%;
-                background: #ffffff;
-                box-shadow: 0 0 10px #ffffff, 0 0 20px var(--accent-secondary);
+                background: var(--accent-primary);
+                box-shadow: 0 0 10px var(--accent-primary);
+                clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             }
 
             /* Cover Typography */
             .cover-header-txt {
-                font-size: 0.5rem;
-                font-family: var(--font-mono);
-                color: var(--accent-secondary);
+                font-size: 0.55rem;
+                font-family: var(--font-serif);
+                color: var(--accent-primary);
                 letter-spacing: 1.5px;
                 text-transform: uppercase;
                 z-index: 3;
@@ -304,19 +305,20 @@
 
             .cover-title-txt {
                 font-size: 0.95rem;
+                font-family: var(--font-serif);
                 font-weight: 700;
                 line-height: 1.25;
-                color: #ffffff;
+                color: var(--text-primary);
                 z-index: 3;
                 text-align: center;
                 margin-top: 4px;
-                letter-spacing: -0.2px;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+                letter-spacing: 0.5px;
+                text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
             }
 
             .cover-author-txt {
                 font-size: 0.52rem;
-                font-family: var(--font-mono);
+                font-family: var(--font-serif);
                 color: var(--text-secondary);
                 letter-spacing: 0.8px;
                 text-transform: uppercase;
@@ -329,6 +331,7 @@
             }
 
             .product-title {
+                font-family: var(--font-serif);
                 font-size: 1.4rem;
                 font-weight: 700;
                 color: var(--text-primary);
@@ -349,19 +352,19 @@
             }
 
             .info-badge {
-                background: rgba(139, 92, 246, 0.1);
-                border: 1px solid rgba(139, 92, 246, 0.2);
+                background: rgba(171, 142, 103, 0.06);
+                border: 1px solid rgba(171, 142, 103, 0.18);
                 padding: 4px 10px;
                 border-radius: 6px;
                 font-size: 0.75rem;
-                color: var(--accent-primary-hover);
+                color: var(--text-secondary);
                 font-weight: 500;
             }
 
             /* Right Side: Order Summary & Checkout Action */
             .order-summary {
                 padding: 40px;
-                background: #0d0d11;
+                background: #ffffff;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -382,7 +385,7 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 color: var(--text-secondary);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
                 padding-bottom: 15px;
                 margin-bottom: 25px;
                 font-weight: 700;
@@ -405,34 +408,15 @@
                 font-weight: 600;
             }
 
-            .price-row.total {
-                border-top: 1px dashed rgba(255, 255, 255, 0.1);
-                padding-top: 20px;
-                margin-top: 10px;
-                margin-bottom: 30px;
-            }
-
-            .price-row.total .price-label {
-                font-size: 1.1rem;
-                font-weight: 700;
-                color: var(--text-primary);
-            }
-
-            .price-row.total .price-value {
-                font-size: 1.6rem;
-                font-weight: 700;
-                color: var(--accent-secondary);
-            }
-
             /* Scafonix Premium Button & Brand Box */
             .payment-box {
-                background: rgba(139, 92, 246, 0.03);
-                border: 1px solid rgba(139, 92, 246, 0.15);
+                background: rgba(171, 142, 103, 0.02);
+                border: 1px solid rgba(171, 142, 103, 0.15);
                 border-radius: 16px;
                 padding: 20px;
                 margin-bottom: 20px;
                 text-align: center;
-                box-shadow: inset 0 0 10px rgba(139, 92, 246, 0.05);
+                box-shadow: inset 0 0 10px rgba(171, 142, 103, 0.03);
             }
 
             .scafonix-btn {
@@ -450,14 +434,14 @@
                 align-items: center;
                 justify-content: center;
                 gap: 8px;
-                box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+                box-shadow: 0 4px 15px rgba(28, 27, 24, 0.15);
                 margin-bottom: 12px;
             }
 
             .scafonix-btn:hover {
                 background: var(--btn-bg-hover);
                 transform: translateY(-2px);
-                box-shadow: 0 8px 20px rgba(139, 92, 246, 0.35);
+                box-shadow: 0 8px 20px rgba(28, 27, 24, 0.25);
             }
 
             .scafonix-btn:active {
@@ -468,34 +452,6 @@
                 font-size: 0.75rem;
                 color: var(--text-secondary);
                 line-height: 1.4;
-            }
-
-            /* Supported Networks list */
-            .network-list {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 12px 16px;
-                flex-wrap: wrap;
-                margin-top: 15px;
-                opacity: 0.8;
-            }
-
-            .network-item {
-                font-size: 0.75rem;
-                display: flex;
-                align-items: center;
-                gap: 4px;
-                color: var(--text-secondary);
-                font-weight: 500;
-            }
-
-            .network-dot {
-                width: 6px;
-                height: 6px;
-                background-color: #06b6d4;
-                border-radius: 50%;
-                box-shadow: 0 0 6px rgba(6, 182, 212, 0.6);
             }
 
             /* Keyframe Animations */
@@ -556,13 +512,13 @@
                                 <div class="book-cover">
                                     <div class="cover-header-txt">Volume 01</div>
                                     <div class="cover-art-container">
-                                        <div class="cover-nebula"></div>
-                                        <div class="cover-constellation">
-                                            <div class="cover-core"></div>
+                                        <div class="cover-magic-circle"></div>
+                                        <div class="cover-rune-inner">
+                                            <div class="cover-rune-core"></div>
                                         </div>
                                     </div>
                                     <div>
-                                        <h2 class="cover-title-txt">CHRONICLES OF SINGULARITY</h2>
+                                        <h2 class="cover-title-txt">THE MAGICLESS ARCHMAGE</h2>
                                         <p class="cover-author-txt" style="margin-top: 8px;">LoreWeaver Engine</p>
                                     </div>
                                 </div>
@@ -573,14 +529,14 @@
 
                 <div class="product-meta">
                     <h2 class="product-title">
-                        Chronicles of the Singularity: Vol. 1
+                        The Magicless Archmage
                     </h2>
                     <p class="product-subtitle">
-                        Premium Special Edition Hardcover & NFT Book Jacket
+                        Volume 1: The Artifact Master (Classic Fantasy Novel & Artifact Guide Included)
                     </p>
                     <div class="product-badge-list">
+                        <span class="info-badge">High Fantasy</span>
                         <span class="info-badge">Special Edition</span>
-                        <span class="info-badge">3D Digital Cover</span>
                     </div>
                 </div>
             </div>
@@ -630,9 +586,9 @@
         </div>
 
         <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-            <a href="https://pay.scafonix.com" target="_blank" rel="noopener noreferrer" class="scafonix-badge-dark" style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-              <img src="https://pay.scafonix.com/assets/logo_white_1000.png" alt="Scafonix Logo" style="height: 16px; width: auto; vertical-align: middle;">
-              <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 0.95rem; color: #ffffff;">Pay <span style="background: linear-gradient(90deg, #60a5fa, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 750;">Integrated</span></span>
+            <a href="https://pay.scafonix.com" target="_blank" rel="noopener noreferrer" class="scafonix-badge-light" style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+              <img src="https://pay.scafonix.com/assets/logo_small_1000.png" alt="Scafonix Logo" style="height: 16px; width: auto; vertical-align: middle;">
+              <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 0.95rem; color: #1c1b18;">Pay <span style="background: linear-gradient(90deg, #2563eb, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 750;">Integrated</span></span>
             </a>
         </div>
     </body>
